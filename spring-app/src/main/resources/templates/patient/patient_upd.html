@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+<header th:insert="blocks/blocks :: header-admin1"></header>
+<div class="position">
+    <h3>Изменить пациента</h3>
+    <form th:method="POST" th:action="@{/patient/edit/{id}(id=${patient.getId()})}" th:object="${patient}" >
+        <p>Имя: </p>
+        <input type="text" th:field="*{name}" id="name" placeholder="Имя" required="true" />
+        <p>Фамилия: </p>
+        <input type="text" th:field="*{surname}" id="surname" placeholder="Фамилия" required="true" />
+        <p>Отчество: </p>
+        <input type="text" th:field="*{patronym}" id="patronym" placeholder="Отчество"  />
+        <p>Дата рождения: </p>
+        <input type="date" th:field="*{birth}" id="birth" placeholder="Дата" required="true" />
+        <p>Номер медкарты: </p>
+        <input type="number" th:field="*{medcard}" id="medcard" placeholder="Номер медкарты" required="true" />
+        <p>Пол:  <input type="radio" th:field="*{gender}" class="gender" value="1" />Мужской
+            <input type="radio"  th:field="*{gender}" class="gender" value="2" />Женский</p>
+        <p>ID адреса: </p>
+        <input type="number" th:field="*{address_id}" id="address_id" placeholder="ID адреса" required="true" /> <br/>
+        <p>
+            <button class="editInput" type="submit">Изменить</button>
+            <input type="reset" value="Очистить" />
+        </p>
+    </form>
+</div>
+<footer th:insert="blocks/blocks :: footer-admin"></footer>
+</body>
+</html>

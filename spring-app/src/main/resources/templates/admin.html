@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/admin-style.css">
+</head>
+<body>
+<div class="header_top">
+    <div class="header_container">
+        <div class="logo">
+            <a href="http://localhost:8081/"  title="Обновить">
+					<span class="img_logo">
+						<img src="img/logo1.png" alt="small_logo">
+					</span>
+            </a>
+        </div>
+        <div class="header_content">
+            <nav class="menu">
+                <ul class="header_list">
+                    <li class="header_item"><a href="">О поликлинике</a></li>
+                    <li class="header_item"><a href="">Администрация</a></li>
+                    <li class="header_item"><a href="admin">Админ-панель</a></li>
+                    <li class="header_item"><a href="booking/call">Вызов врача</a></li>
+                    <li class="header_item"><a href="booking/medlist">Заказ выписки</a></li>
+                    <li class="header_item"><a href="booking/record">Заказать талон</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<div th:insert="blocks/blocks :: header-admin"></div>
+</body>
+</html>

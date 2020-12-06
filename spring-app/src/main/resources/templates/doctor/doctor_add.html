@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+<header th:insert="blocks/blocks :: header-admin"></header>
+<div class="position">
+    <h3>Добавить доктора</h3>
+    <form th:method="POST" th:action="@{/doctor/new}" th:object="${doctor}" >
+        <input type="text" th:field="*{name}" placeholder="Имя" required="true" /> <br/>
+        <input type="text" th:field="*{surname}" placeholder="Фамилия" required="true" /> <br/>
+        <input type="text" th:field="*{patronym}" placeholder="Отчество"  /> <br/>
+        <p>Дата рождения: </p>
+        <input type="date" th:field="*{birth}" placeholder="Дата" required="true" />
+        <p>Дата начала работы: </p>
+        <input type="date" th:field="*{begin_job}" placeholder="Дата" required="true" />
+        <br/>
+        <input type="number" th:field="*{speciality_id}" placeholder="ID специальности" required="true"  /><br/>
+        <input type="number" th:field="*{room_id}" placeholder="ID кабинета" required="true"  /> <br/>
+        <input type="number" th:field="*{district_id}" placeholder="ID участка"   /> <br/>
+        <p>
+            <input type="submit" value="Добавить" />
+            <input type="reset" value="Очистить" />
+        </p>
+    </form>
+</div>
+<footer th:insert="blocks/blocks :: footer-admin"></footer>
+</body>
+</html>

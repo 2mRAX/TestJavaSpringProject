@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+<header th:insert="blocks/blocks :: header-admin1"></header>
+<div class="position">
+    <h3>Изменить специальность</h3>
+    <form th:method="POST" th:action="@{/speciality/edit/{id}(id=${speciality.getId()})}" th:object="${speciality}" >
+        <input type="text" th:field="*{name}" id="name" placeholder="Специальность" required="true"/>
+        <p>
+            <button class="editInput" type="submit">Изменить</button>
+            <input type="reset" value="Очистить" />
+        </p>
+    </form>
+</div>
+<footer th:insert="blocks/blocks :: footer-admin"></footer>
+</body>
+</html>

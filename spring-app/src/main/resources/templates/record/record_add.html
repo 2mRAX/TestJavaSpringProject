@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+<header th:insert="blocks/blocks :: header-admin"></header>
+<div class="position">
+    <h3>Добавить запись</h3>
+    <form th:method="POST" th:action="@{/record/new}" th:object="${record}" >
+        <p>Дата приема: </p>
+        <input type="date" th:field="*{date}" placeholder="Дата" required="true" />
+        <p>Время приема: </p>
+        <input type="time" th:field="*{time}" min="08:00" max="19:59" step="900" placeholder="Время" required="true" /> <br/>
+        <input type="number" th:field="*{doctor_id}" placeholder="ID доктора" required="true" /> <br/>
+        <input type="number" th:field="*{patient_id}" placeholder="ID пациента" required="true" /> <br/>
+        <input type="text" th:field="*{comment}" placeholder="Комментарий"  /> <br/>
+        <p>
+            <input type="submit" value="Добавить" />
+            <input type="reset" value="Очистить" />
+        </p>
+    </form>
+</div>
+<footer th:insert="blocks/blocks :: footer-admin"></footer>
+</body>
+</html>

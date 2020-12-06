@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+<header th:insert="blocks/blocks :: header-admin"></header>
+<form th:method="get" th:action="@{/room/new}" th:object="${room}" >
+    <p>
+        <button class="addInput" type="submit">Добавить кабинет</button>
+    </p>
+</form>
+<div class="position">
+    <table border="1">
+        <thead>
+        <tr>
+            <th class="tableSimp">ID кабинета</th>
+            <th class="tableSimp">Номер</th>
+            <th class="tableSimp">Название</th>
+            <th class="tableSimp">Изменить</th>
+            <th class="tableSimp">Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="b : ${rooms}">
+            <td class="tableSimp" th:text="${b.id}"></td>
+            <td class="tableSimp" th:text="${b.number}"></td>
+            <td class="tableSimp" th:text="${b.name}"></td>
+            <td>
+                <form th:method="get" th:action="@{/room/edit/{id}(id=${b.id})}" th:object="${room}" >
+                    <p>
+                        <button class="editInput" type="submit">Изменить</button>
+                    </p>
+                </form>
+            </td>
+            <td>
+                <form th:method="get" th:action="@{/room/delete/{id}(id=${b.id})}" th:object="${speciality}" >
+                    <p>
+                        <button class="deleteInput" type="submit">Удалить</button>
+                    </p>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer th:insert="blocks/blocks :: footer-admin"></footer>
+</body>
+</html>

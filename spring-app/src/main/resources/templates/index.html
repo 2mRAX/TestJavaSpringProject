@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Site</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+</head>
+<body>
+<header>
+    <div class="header_top">
+        <div class="header_container">
+            <div class="logo">
+                <a href=""  title="Обновить">
+                    <div class="img_logo">
+                        <img src="img/logo1.png" alt="small_logo">
+                    </div>
+                </a>
+            </div>
+            <div class="header_content">
+                <nav class="menu">
+                    <ul class="header_list">
+                        <li class="header_item"><a href="#about">О поликлинике</a></li>
+                        <li class="header_item"><a href="#admin">Администрация</a></li>
+                        <li class="header_item"><a href="admin">Админ-панель</a></li>
+                        <li class="header_item"><a href="booking/call">Вызов врача</a></li>
+                        <li class="header_item"><a href="booking/medlist">Заказ выписки</a></li>
+                        <li class="header_item"><a href="booking/record">Заказать талон</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="slider">
+        <div class="slider_opacity">
+            <div class="header_container">
+                <div class="slider_in">
+                    <div class="slider_for_text">
+                        <div class="slider_title">Частная клиника</div>
+                        <div class="slider_text">имени Грегори Хауса</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="case">
+    <div class="case_position3">
+        <a id="about"></a>
+        <div class="header_container">
+            <div class="case_in3">
+                <div class="case_in_text3">
+
+                    <div class="case_title">
+                        О поликлинике
+                    </div>
+                    <div class="case_text3">
+<!--                        SELECT concat(d.surname,' ', d.name), s.speciality, u.district, r.room, concat(w.begin_time,' - ',w.end_time)-->
+<!--                        from doctor d inner join room r on d.id_room = r.id_room inner join speciality s-->
+<!--                        on d.id_speciality = s.id_speciality inner join shift w on d.id_shift = w.id_work_time inner join district-->
+<!--                        u on u.id_doctor= d.id_doctor where u.district <= (SELECT sum(u.district)FROM district u);-->
+                        Частная клиника имени Г. Хауса является самостоятельным учреждением
+                        здравоохранения и предназначена для оказания различных видов
+                        медицинской помощи населению.
+                        <p>Клиника основана в 1980 году. Врачи клиники занимаются самыми сложными случаями не только в г. Минске, но и в целом по республике.
+                            Основателями и действующими врачами клиники являются врач-диагност Грегори Хаус и главный врач Роберт Келсо</p>
+                        <p>Клиника разделена на 3 отделения, в каждом отделении занимаются своей специализацией;
+                            Также клиника оснащена современным дорогостоящим оборудованием и работающими специалистами высокого класса.</p>
+                    </div>
+                </div>
+                <div class="case_image3"> </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--<section class="case">-->
+<!--    <div class="case_position3">-->
+<!--        <div class="header_container">-->
+
+<!--            <div class="case_in4">-->
+<!--                <div class="case_in_text3">-->
+<!--                    <div class="case_title4">-->
+<!--                        Количество специалистов-->
+<!--                    </div>-->
+<!--                    <div class="case_text4">-->
+<!--                        <form method="POST">-->
+<!--                            <div>Сортировка: </div>-->
+<!--                            <input type="hidden" name="sort" value="DESC" />-->
+<!--                            <input type="radio" name="sort" value="ASC" id="radio1" /> <label for="radio1">По возврастанию</label>-->
+<!--                            <input type="radio" name="sort" value="DESC" id="radio2" /> <label for="radio2">По убыванию </label>-->
+<!--                            <p>-->
+<!--                                <input type="submit" class="btn" value="Сортировать" required />-->
+<!--                            </p>-->
+<!--                        </form>-->
+<!--&lt;!&ndash;                        SELECT s.speciality, count(d.id_speciality) from doctor d inner join speciality s&ndash;&gt;-->
+<!--&lt;!&ndash;                        on d.id_speciality = s.id_speciality group by d.id_speciality order by count(d.id_speciality) $sort;&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    </div>-->
+<!--</section>-->
+<section>
+    <div class="comment_position">
+        <a id="admin"></a>
+        <div class="header_container">
+            <div class="comment_in">
+                <div class="comment_title">
+                    Администрация
+                </div>
+                <div class="comment_flex">
+                    <div class="space"></div>
+                    <div class="comment">
+                        <div class="comment_img comment_img1">
+                        </div>
+                        <div class="comment_name">
+                            Роберт Келсо
+<!--                            SELECT r.descryption, concat(left(d.name,1),'. ', d.surname) FROM doctor d INNER JOIN room-->
+<!--                            r on d.id_room=r.id_room where d.id_doctor=8;-->
+                        </div>
+                        <div class="comment_text">
+                            Квалификация: 1-я категория;<br>
+                            Специальность: Врач-кардиолог;<br>
+                            Врач-организатор здравоохранения;<br>
+                            Кабинет: 400;<br>
+                            Рабочие телефоны: Приемная(факс):<br>
+                            200-18-96;<br>
+                            Cтаж работы: 30 лет;
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="comment_img comment_img2">
+                        </div>
+                        <div class="comment_name">
+                            Андрей Быков
+<!--                            SELECT r.descryption, concat(left(d.name,1),'. ', d.surname) FROM doctor d INNER JOIN room-->
+<!--                            r on d.id_room=r.id_room where d.id_doctor=9;-->
+                        </div>
+                        <div class="comment_text">
+                            Квалификация: 1-я категория;<br>
+                            Специальность: Врач-терапевт;<br>
+                            Кабинет: 401;<br>
+                            Рабочие телефоны: Приемная(факс):<br>
+                            200-18-96;<br>
+                            Cтаж работы: 22 лет;
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="comment_img comment_img3">
+                        </div>
+                        <div class="comment_name">
+                            Перси Кокс
+<!--                            SELECT r.descryption, concat(left(d.name,1),'. ', d.surname) FROM doctor d INNER JOIN room r on d.id_room=r.id_room where d.id_doctor=10-->
+                        </div>
+                        <div class="comment_text">
+                            Квалификация: 1-я категория;<br>
+                            Специальность: Врач общей практики;<br>
+                            Кабинет: 402;<br>
+                            Рабочие телефоны: Приемная(факс):<br>
+                            200-18-96;<br>
+                            Cтаж работы: 21 лет;
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="comment_img comment_img4">
+                        </div>
+                        <div class="comment_name">
+                            Елизавета Кадди
+<!--                            SELECT r.descryption, concat(left(d.name,1),'. ', d.surname) FROM doctor d INNER JOIN room-->
+<!--                            r on d.id_room=r.id_room where d.id_doctor=11;-->
+                        </div>
+                        <div class="comment_text">
+                            Квалификация: 1-я категория;<br>
+                            Специальность: Врач-эндокринолог;<br>
+                            Кабинет: 402;<br>
+                            Рабочие телефоны: Приемная(факс):<br>
+                            200-18-96;<br>
+                            Cтаж работы: 27 лет;
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="call_position">
+        <a id="call"></a>
+        <div class="header_container">
+            <div class="call_flex">
+                <div class="call_map"> </div>
+                <div class="space"></div>
+                <div class="call_form call_inc">
+                    <div class="call_title">
+                        Задать вопрос
+                    </div>
+                    <form action="booking/questions.php">
+                        <input type="text" required placeholder="Имя">
+                        <input type="email" required placeholder="Электронная почта">
+                        <p><textarea placeholder="Ваш вопрос" name="text" style="margin: 0px; width: 361px; height: 208px;" required>
+								</textarea>
+                        </p>
+                        <div class="buttons">
+                            <button class="btn" type="submit">Отправить вопрос</button>
+                            <button class="btn" type="reset">Очистить</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="space"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="footer_position">
+        <div class="header_container">
+            <div class="footer_inner">
+                <div class="footer_inner1">
+                    <h3> Контактные данные: </h3>
+                    <div>
+                        <a class="footer_telephone" href="tel:+15709045023">
+                            <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                        </a> &nbsp;
+                        <a  class="footer_email" href="mailto:support@clinichouse.com">
+                            <i class="fa fa-envelope-o fa-2x" aria-hidden="true"> </i>
+                        </a> &nbsp;
+                        <a class="footer_whatsapp" href="tel:+375447642711">
+                            <i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i>
+                        </a> &nbsp;
+                        <a class="footer_facebook" href="https://web.facebook.com" target="_blank" title="Откроется в новом окне">
+                            <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                        </a>&nbsp;
+                        <a class="footer_linkedin" href="https://www.linkedin.com" target="_blank" title="Откроется в новом окне">
+                            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                        </a>&nbsp;
+
+                    </div>
+                </div>
+                <div class="footer_inner1">
+                    <h3> Адрес: </h3>
+                    <div class="address">
+                        <address>ул. Академическая 13, Минск, 220013</address>
+                    </div>
+                </div>
+                <div class="footer_inner2">
+                    <h3> Копирайт: </h3>
+                    &copy; 1980-2019 Частная поликлиника имени Г. Хауса
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <a class="top" href="#top" title="Наверх">
+                <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div>
+            <a class="adown" href="#adown" title="Вниз">
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div> <a id="adown"></a> </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+<header th:insert="blocks/blocks :: header-admin1"></header>
+<div class="position">
+    <h3>Изменить данные доктора</h3>
+    <form th:method="POST" th:action="@{/doctor/edit/{id}(id=${doctor.getId()})}" th:object="${doctor}" >
+        <p>Имя: </p>
+        <input type="text" th:field="*{name}" id="name" placeholder="Имя" required="true" />
+        <p>Фамилия: </p>
+        <input type="text" th:field="*{surname}" id="surname" placeholder="Фамилия" required="true" />
+        <p>Отчество: </p>
+        <input type="text" th:field="*{patronym}" id="patronym" placeholder="Отчество"  />
+        <p>Дата рождения: </p>
+        <input type="date" th:field="*{birth}" id="birth" placeholder="Дата рождения" required="true" />
+        <p>Дата начала работы: </p>
+        <input type="date" th:field="*{begin_job}" id="begin_job" placeholder="Дата начала работы" required="true" />
+        <p>ID специальности: </p>
+        <input type="number" th:field="*{speciality_id}" id="speciality_id" placeholder="ID специальности" required="true" />
+        <p>ID кабинета: </p>
+        <input type="number" th:field="*{room_id}" id="room_id" placeholder="ID кабинета" required="true" />
+        <p>ID участка: </p>
+        <input type="number" th:field="*{district_id}" id="district_id" placeholder="ID участка"  />
+        <p>
+            <button class="editInput" type="submit">Изменить</button>
+            <input type="reset" value="Очистить" />
+        </p>
+    </form>
+</div>
+<footer th:insert="blocks/blocks :: footer-admin"></footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+<header th:insert="blocks/blocks :: header-admin1"></header>
+<div class="position">
+    <h3>Изменить запись на прием</h3>
+    <form th:method="POST" th:action="@{/record/edit/{id}(id=${record.getId()})}" th:object="${record}" >
+        <p>Дата приема: </p>
+        <input type="date" th:field="*{date}" id="date" placeholder="Дата" required="true" />
+        <p>Время приема: </p>
+        <input type="time" th:field="*{time}" min="08:00" max="19:59" step="900" id="time" placeholder="Время" required="true" />
+        <p>ID Доктора: </p>
+        <input type="number" th:field="*{doctor_id}" id="doctor_id" placeholder="ID доктора" required="true" />
+        <p>ID пациента: </p>
+        <input type="number" th:field="*{patient_id}" id="patient_id" placeholder="ID пациента" required="true" />
+        <p>Комментарий: </p>
+        <input type="text" th:field="*{comment}" id="comment" placeholder="Комментарий" /> <br/>
+        <p>
+            <button class="editInput" type="submit">Изменить</button>
+            <input type="reset" value="Очистить" />
+        </p>
+    </form>
+</div>
+<footer th:insert="blocks/blocks :: footer-admin"></footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+<header th:insert="blocks/blocks :: header-admin1"></header>
+<div class="position">
+    <h3>Изменить данные участка</h3>
+    <form th:method="POST" th:action="@{/district/edit/{id}(id=${district.getId()})}" th:object="${district}" >
+        <p>Номер участка: </p>
+        <input type="number" th:field="*{number_district}" id="number_district" placeholder="Номер участка" required="true" />
+        <p>Улица: </p>
+        <input type="text" th:field="*{street}" id="street" placeholder="Улица" required="true" />
+        <p>
+            <button class="editInput" type="submit">Изменить</button>
+            <input type="reset" value="Очистить" />
+        </p>
+    </form>
+</div>
+<footer th:insert="blocks/blocks :: footer-admin"></footer>
+</body>
+</html>

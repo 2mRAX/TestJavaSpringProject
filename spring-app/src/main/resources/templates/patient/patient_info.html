@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+<header th:insert="blocks/blocks :: header-admin"></header>
+<form th:method="get" th:action="@{/patient/new}" th:object="${patient}" >
+    <p>
+        <button class="addInput" type="submit">Добавить пациента в БД</button>
+    </p>
+</form>
+<div class="position">
+    <table border="1">
+        <thead>
+        <tr>
+            <th class="tableSimp">ID пациента</th>
+            <th class="tableSimp">Имя и Фамилия</th>
+            <th class="tableSimp">Отчество</th>
+            <th class="tableSimp">Пол</th>
+            <th class="tableSimp">Номер медкарты</th>
+            <th class="tableSimp">Дата рождения</th>
+            <th class="tableSimp">ID адреса</th>
+            <th class="tableSimp">Изменить</th>
+            <th class="tableSimp">Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="b : ${patients}">
+            <td class="tableSimp" th:text="${b.id}"></td>
+            <td class="tableSimp" th:text="${b.name+' '+b.surname}"></td>
+            <td class="tableSimp" th:text="${b.patronym}"></td>
+            <td class="tableSimp" th:text="${b.gender}"></td>
+            <td class="tableSimp" th:text="${b.medcard}"></td>
+            <td class="tableSimp" th:text="${b.birth}"></td>
+            <td class="tableSimp" th:text="${b.address_id}"></td>
+            <td>
+                <form th:method="get" th:action="@{/patient/edit/{id}(id=${b.id})}" th:object="${patient}" >
+                    <p>
+                        <button class="editInput" type="submit">Изменить</button>
+                    </p>
+                </form>
+            </td>
+            <td>
+                <form th:method="get" th:action="@{/patient/delete/{id}(id=${b.id})}" th:object="${patient}" >
+                    <p>
+                        <button class="deleteInput" type="submit">Удалить</button>
+                    </p>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer th:insert="blocks/blocks :: footer-admin"></footer>
+</body>
+</html>

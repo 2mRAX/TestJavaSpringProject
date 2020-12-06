@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+<header th:insert="blocks/blocks :: header-admin"></header>
+<form th:method="get" th:action="@{/district/new}" th:object="${district}" >
+    <p>
+        <button class="addInput" type="submit">Добавить участок</button>
+    </p>
+</form>
+<div class="position">
+    <table border="1">
+        <thead>
+        <tr>
+            <th class="tableSimp">ID участка</th>
+            <th class="tableSimp">Номер участка</th>
+            <th class="tableSimp">Улица</th>
+            <th class="tableSimp">Изменить</th>
+            <th class="tableSimp">Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="b : ${districts}">
+            <td class="tableSimp" th:text="${b.id}"></td>
+            <td class="tableSimp" th:text="${b.number_district}"></td>
+            <td class="tableSimp" th:text="${'ул. '+b.street}"></td>
+            <td>
+                <form th:method="get" th:action="@{/district/edit/{id}(id=${b.id})}" th:object="${district}" >
+                    <p>
+                        <button class="editInput" type="submit">Изменить</button>
+                    </p>
+                </form>
+            </td>
+            <td>
+                <form th:method="get" th:action="@{/district/delete/{id}(id=${b.id})}" th:object="${district}" >
+                    <p>
+                        <button class="deleteInput" type="submit">Удалить</button>
+                    </p>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer th:insert="blocks/blocks :: footer-admin"></footer>
+</body>
+</html>
